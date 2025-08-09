@@ -1,0 +1,339 @@
+{
+  "@context": "https://www.churp.dev/context/v1.0.json",
+  "offer": {
+    "name": "Acme Monogram Pro Cricket Bat",
+    "producer": "Acme Sports",
+    "version": "2025",
+    "category": "Cricket Bat",
+    "manufactured_in": "England",
+    "quantity": 1,
+    "build_time": "5-7 working days",
+    "included_items": [
+      "Acme Monogram Pro Cricket Bat",
+      "Premium Bat Cover"
+    ],
+    "value": [
+      {
+        "countries": ["United States of America"],
+        "base_price": "$399",
+        "original_price": "$449",
+        "import_duties_paid": true,
+        "price_including_tax": true,
+        "tax_amount": "$32.00"
+      }
+    ],
+    "identifier": {
+      "type": "GTIN",
+      "value": "5012345678901"
+    },
+    "transaction": {
+      "type": "one-time",
+      "methods": ["Visa", "Mastercard", "American Express", "PayPal"]
+    },
+    "availability": [
+      {
+        "countries": ["United States of America"],
+        "excluded_regions": ["Scottish Highlands"],
+        "excluded_postal_codes": ["IV*"],
+        "stock_state": "in_stock",
+        "stock_quantity": 3,
+        "languages": ["en-us"]
+      }
+    ],
+    "relations": {
+      "often_bought_with": [
+        {
+          "offer_name": "Acme Elite Batting Gloves",
+          "offer_url": "https://store.acmesports.com/products/elite-batting-gloves",
+          "stock_state": "in_stock"
+        }
+      ],
+      "requires": [
+        {
+          "offer_name": "Acme Bat Oil",
+          "offer_url": "https://store.acmesports.com/products/bat-oil",
+          "stock_state": "in_stock"
+        }
+      ],
+      "compatible_with": [
+        {
+          "offer_name": "Acme Deluxe Bat Stand",
+          "offer_url": "https://store.acmesports.com/products/deluxe-bat-stand",
+          "stock_state": "in_stock"
+        }
+      ],
+      "fallbacks": [
+        {
+          "offer_name": "Acme Classic Cricket Bat",
+          "offer_url": "https://store.acmesports.com/products/classic-cricket-bat",
+          "stock_state": "in_stock"
+        }
+      ],
+      "upsells": [
+        {
+          "offer_name": "Acme Signature Edition Cricket Bat",
+          "offer_url": "https://store.acmesports.com/products/signature-edition-cricket-bat",
+          "stock_state": "in_stock"
+        }
+      ]
+    },
+    "fulfillment": [
+      {
+        "method": "Express Delivery",
+        "timeframe": "2-3 working days",
+        "price": "$15",
+        "tax_amount": "$1.20",
+        "countries": ["United States of America"],
+        "excluded_regions": ["Alaska"],
+        "excluded_postal_codes": ["99*"],
+        "note": "Order by 1pm for same-day dispatch. Working days are Monday to Friday.",
+        "included_items_override": [
+          "Acme Monogram Pro Cricket Bat",
+          "Premium Bat Cover"
+        ],
+        "carbon_footprint": "420g CO₂e",
+        "build_time_override": "1-2 working days"
+      }
+    ],
+    "promotions": [
+      {
+        "benefit": "Free bat cover with every purchase",
+        "countries": ["United States of America"],
+        "minimum_age": 14,
+        "subscribed_email_required": false,
+        "user_type": "all",
+        "minimum_purchase_amount": "$0",
+        "note": "Limited time offer while supplies last",
+        "custom_rules": ["Offer valid for one free cover per order"],
+        "linked_offer": "https://store.acmesports.com/products/premium-bat-cover"
+      }
+    ],
+    "media": [
+      {
+        "source": "https://cdn.acmesports.com/products/monogram-pro-front.jpg",
+        "position_preference": 1,
+        "description": "Acme Monogram Pro Cricket Bat on grass pitch"
+      },
+      {
+        "source": "https://cdn.acmesports.com/products/monogram-pro-angle.jpg",
+        "position_preference": 2,
+        "description": "Detailed shot of the premium English Willow grain"
+      }
+    ],
+    "features": [
+      {
+        "name": "weight",
+        "description": "Average weight of the bat",
+        "value": "2.7 lbs"
+      },
+      {
+        "name": "material",
+        "description": "Premium English Willow, Grade 1",
+        "value": "English Willow"
+      },
+      {
+        "name": "length",
+        "description": "Full size bat length",
+        "value": "33.5 inches"
+      },
+      {
+        "name": "handle",
+        "description": "Shape and construction of the handle",
+        "value": "Oval, reinforced cane"
+      }
+    ],
+    "terms": {
+      "policies": [
+        {
+          "title": "Return Policy",
+          "overview": ["returns accepted within 30 days of delivery"],
+          "reference_url": "https://acmesports.com/legal/returns-policy.pdf"
+        }
+      ],
+      "warranties": [
+        {
+          "overview": ["1-year manufacturer warranty against defects"],
+          "reference_url": "https://acmesports.com/legal/warranty.pdf"
+        }
+      ]
+    },
+    "contact": [
+      {
+        "method": "phone",
+        "handle": "+1-888-ACME-BAT",
+        "hours": "09:00-17:00",
+        "timezone": "EST",
+        "days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ],
+        "intent": ["orders", "support"]
+      },
+      {
+        "method": "email",
+        "handle": "support@acmesports.com",
+        "hours": "09:00-17:00",
+        "timezone": "EST",
+        "days": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ],
+        "intent": ["general"]
+      }
+    ],
+    "customer_context": {
+      "recommend_if": [
+        "Looking for a premium, match-ready cricket bat",
+        "Competitive club or school cricket"
+      ],
+      "not_recommended_if": [
+        "Requires a bat under 2.5 lbs",
+        "Batting in hard tennis ball leagues"
+      ],
+      "problem_it_solves": [
+        "Need for a powerful, reliable bat for competitive cricket"
+      ],
+      "frequently_asked": [
+        {
+          "question": "Is the bat ready to use out of the box?",
+          "answer": "We recommend oiling and knocking in before first match use."
+        }
+      ],
+      "gender": "unisex",
+      "age-range": "14–60"
+    },
+    "lifecycle": {
+      "stage": "new",
+      "estimated_lifespan": "4 years",
+      "estimated_maintenance": [
+        "apply bat oil monthly",
+        "replace grip each season"
+      ],
+      "estimated_ownership_cost": [
+        "$20/year maintenance"
+      ],
+      "discontinued_on": "2028-12-31",
+      "repairability": "moderate",
+      "carbon_footprint": "11.4kg CO₂e"
+    },
+    "ux_preference": {
+      "tone": "premium",
+      "brand_color": "#D2232A"
+    },
+    "documents": [
+      {
+        "title": "Monogram Pro Bat User Guide",
+        "overview": "How to prepare, maintain, and care for your Acme cricket bat",
+        "intent": ["how to setup"],
+        "file_url": "https://acmesports.com/guides/monogram-pro-user-guide.pdf",
+        "language": ["en-us"]
+      }
+    ],
+    "ratings": {
+      "label": "product rating",
+      "average_value": 4.9,
+      "total_count": 112,
+      "score_range": "0–5",
+      "best_score": 5,
+      "reviews": [
+        {
+          "reviewer": "Sam K",
+          "date": "2025-07-18",
+          "score": 5,
+          "content": "Superb feel and balance. Outperforms every bat I've owned.",
+          "media": ["https://cdn.acmesports.com/reviews/monogram-pro-bat-review1.jpg"]
+        }
+      ],
+      "collected_by": "Trustpilot"
+    },
+    "recognitions": [
+      {
+        "title": "ECB Approved",
+        "type": "certification",
+        "issuing_body": "England and Wales Cricket Board",
+        "summary": "Approved for competitive league play",
+        "proof": "https://ecb.co.uk/documents/acme-monogram-pro-certificate.pdf"
+      }
+    ],
+    "instructions": [
+      {
+        "care": [
+          "wipe with dry cloth after each use",
+          "store in provided bat cover"
+        ],
+        "setup": [
+          "apply bat oil before first use",
+          "knock in the bat for at least 6 hours"
+        ],
+        "disposal": ["recycle at local sports equipment center"],
+        "warnings": [
+          "do not expose to water",
+          "do not use for indoor cricket"
+        ],
+        "usage": ["use only with standard leather cricket balls"]
+      }
+    ],
+    "modifiers": [
+      {
+        "label": "Grip Style",
+        "explainer": "Choose your preferred handle grip",
+        "options": [
+          {
+            "value": "Chevron Grip",
+            "countries": ["United States of America"],
+            "base_price_delta": "$0",
+            "original_price_delta": "$0",
+            "tax_amount_delta": "$0",
+            "quantity_delta": 0,
+            "add": {
+              "actions": [
+                {
+                  "label": "Buy now",
+                  "target": "https://store.acmesports.com/checkout/add/monogram-pro-bat-chevron-grip",
+                  "intent": "User wants to buy the Acme Monogram Pro Cricket Bat now"
+                }
+              ]
+            }
+          },
+          {
+            "value": "Matrix Grip",
+            "countries": ["United States of America"],
+            "base_price_delta": "+$7",
+            "original_price_delta": "$7",
+            "tax_amount_delta": "$0.60",
+            "quantity_delta": 0,
+            "add": {
+              "actions": [
+                {
+                  "label": "Buy now",
+                  "target": "https://store.acmesports.com/checkout/add/monogram-pro-bat-chevron-grip",
+                  "intent": "User wants to buy the Acme Monogram Pro Cricket Bat now"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "seller": {
+    "commercial_name": "Acme Sports",
+    "entity_name": "Acme Sports Ltd.",
+    "locations": [
+      {
+        "branch_name": "New York Showroom",
+        "address_line": "350 Fifth Avenue",
+        "postal_code": "10118",
+        "city": "New York",
+        "country": "United States of America",
+        "intent": ["purchase", "support"]
+      }
+    ]
+  }
+}

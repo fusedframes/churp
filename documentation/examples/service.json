@@ -1,0 +1,252 @@
+{
+  "@context": "https://www.churp.dev/context/v1.0.json",
+  "offer": {
+    "name": "SparklePro Deep Home Cleaning",
+    "producer": "SparklePro",
+    "category": "Deep Cleaning Service",
+    "quantity": 1,
+    "value": [
+      {
+        "countries": ["United States of America"],
+        "base_price": "$279",
+        "original_price": "$349",
+        "import_duties_paid": false,
+        "price_including_tax": true,
+        "tax_amount": "$22.32"
+      }
+    ],
+    "transaction": {
+      "type": "book"
+    },
+    "availability": [
+      {
+        "countries": ["United States of America"],
+        "excluded_regions": ["Hawaii"],
+        "excluded_postal_codes": ["967*"],
+        "stock_state": "by_request",
+        "languages": ["en-us"]
+      }
+    ],
+    "relations": {
+      "fallbacks": [
+        {
+          "offer_name": "SparklePro Standard Cleaning",
+          "offer_url": "https://sparklepro.com/services/standard-cleaning",
+          "stock_state": "in_stock"
+        }
+      ],
+      "upsells": [
+        {
+          "offer_name": "SparklePro Move-In/Move-Out Clean",
+          "offer_url": "https://sparklepro.com/services/move-clean",
+          "stock_state": "in_stock"
+        }
+      ]
+    },
+    "fulfillment": [
+      {
+        "method": "On-Site Service",
+        "timeframe": "1 working day",
+        "price": "$0",
+        "tax_amount": "$0",
+        "countries": ["United States of America"],
+        "excluded_regions": ["Hawaii"],
+        "excluded_postal_codes": ["967*"],
+        "note": "Our team will arrive between 8am–10am on the day of service."
+      }
+    ],
+    "actions": [
+      {
+        "label": "Book now",
+        "target": "https://sparklepro.com/cart/book/deep-cleaning",
+        "intent": "User wants to book a home deep cleaning appointment"
+      }
+    ],
+    "promotions": [
+      {
+        "benefit": "20% off for new customers",
+        "countries": ["United States of America"],
+        "subscribed_email_required": true,
+        "user_type": "new_customer",
+        "minimum_purchase_amount": "$200",
+        "note": "Valid for your first service booking only",
+        "custom_rules": ["Must sign up to the SparklePro newsletter"],
+        "linked_offer": "https://sparklepro.com/services/standard-cleaning"
+      }
+    ],
+    "media": [
+      {
+        "source": "https://cdn.sparklepro.com/services/deep-cleaning-team.jpg",
+        "position_preference": 1,
+        "description": "SparklePro team providing a full-home deep clean"
+      },
+      {
+        "source": "https://cdn.sparklepro.com/services/eco-products.jpg",
+        "position_preference": 2,
+        "description": "Eco-friendly cleaning supplies used by SparklePro"
+      }
+    ],
+    "features": [
+      {
+        "name": "square footage",
+        "description": "Maximum area cleaned in one service",
+        "value": "Up to 2,500 sq ft"
+      },
+      {
+        "name": "number of cleaners",
+        "description": "Team size per booking",
+        "value": "2"
+      },
+      {
+        "name": "eco-friendly",
+        "description": "All cleaning products are certified non-toxic",
+        "value": "Yes"
+      },
+      {
+        "name": "deep sanitization",
+        "description": "Includes steam sanitization of bathrooms and kitchen",
+        "value": "Included"
+      }
+    ],
+    "terms": {
+      "commitment_period": "1 day",
+      "deposit_amount": "$50",
+      "renewal_frequency": "none",
+      "policies": [
+        {
+          "title": "Cancellation Policy",
+          "overview": ["Free cancellation up to 24 hours before scheduled time"],
+          "reference_url": "https://sparklepro.com/legal/cancellation-policy.pdf"
+        }
+      ],
+      "warranties": [
+        {
+          "overview": ["Satisfaction guarantee or your money back"],
+          "reference_url": "https://sparklepro.com/legal/guarantee.pdf"
+        }
+      ],
+      "liability_limit": "$10,000 for property damage",
+      "insurance_notice": "insurance does not cover damage to unsecured valuables"
+    },
+    "contact": [
+      {
+        "method": "phone",
+        "handle": "+1-800-SPARKLE",
+        "hours": "08:00-18:00",
+        "timezone": "EST",
+        "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+        "intent": ["support", "booking"]
+      },
+      {
+        "method": "email",
+        "handle": "help@sparklepro.com",
+        "hours": "08:00-18:00",
+        "timezone": "EST",
+        "days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+        "intent": ["general"]
+      }
+    ],
+    "legal": [
+      {
+        "title": "service agreement",
+        "summary": ["Clients must be 18+ to book", "Property must be accessible at time of service"],
+        "reference_url": "https://sparklepro.com/legal/service-agreement.pdf",
+        "jurisdictions": ["United States of America"]
+      }
+    ],
+    "customer_context": {
+      "recommend_if": [
+        "You need a one-off, full-property clean",
+        "You want a non-toxic, eco-friendly cleaning service"
+      ],
+      "not_recommended_if": [
+        "You require daily or recurring cleaning",
+        "You have a home larger than 2,500 sq ft"
+      ],
+      "ideal_conditions": [
+        "Property must be vacant for at least 3 hours after cleaning",
+        "Pets should be secured during service"
+      ],
+      "problem_it_solves": [
+        "Build-up of dust, grime, and allergens in the home",
+        "Need for a one-time, detailed clean for moving in or out"
+      ],
+      "learning_curve": "none",
+      "frequently_asked": [
+        {
+          "question": "Do I need to provide any cleaning products?",
+          "answer": "No, all supplies and equipment are provided by SparklePro."
+        },
+        {
+          "question": "How long does a deep cleaning session last?",
+          "answer": "A typical home deep cleaning takes 4–6 hours."
+        }
+      ],
+      "gender": "unisex",
+      "age-range": "25–70"
+    },
+    "ux_preference": {
+      "tone": "professional",
+      "layout": "modifiers_multi_step",
+      "brand_color": "#009688"
+    },
+    "documents": [
+      {
+        "title": "Deep Cleaning Checklist",
+        "overview": "Details every area and task included in the SparklePro deep cleaning service",
+        "intent": ["what's included"],
+        "file_url": "https://sparklepro.com/guides/deep-clean-checklist.pdf",
+        "language": ["en-us"]
+      }
+    ],
+    "ratings": {
+      "label": "service satisfaction",
+      "average_value": 4.7,
+      "total_count": 98,
+      "score_range": "0–5",
+      "best_score": 5,
+      "reviews": [
+        {
+          "reviewer": "Lisa R",
+          "date": "2025-06-12",
+          "score": 5,
+          "content": "Absolutely sparkling! The team was friendly and professional. Will use again.",
+          "media": ["https://cdn.sparklepro.com/reviews/lisaR-deepclean.jpg"]
+        }
+      ],
+      "collected_by": "Trustpilot"
+    },
+    "recognitions": [
+      {
+        "title": "Green Seal Certified",
+        "type": "certification",
+        "issuing_body": "Green Seal",
+        "summary": "Eco-friendly cleaning verified by Green Seal",
+        "proof": "https://greenseal.org/certified/sparklepro-certificate.pdf"
+      }
+    ],
+    "instructions": [
+      {
+        "care": ["Ventilate your home for 30 minutes after cleaning"],
+        "setup": ["Remove clutter from surfaces to be cleaned", "Secure pets and valuables"],
+        "disposal": ["Dispose of single-use cleaning cloths in household waste"],
+        "warnings": ["Do not enter freshly cleaned rooms for 30 minutes"],
+        "usage": ["Book service at least 2 days in advance"]
+      }
+    ]
+  },
+  "seller": {
+    "commercial_name": "SparklePro",
+    "entity_name": "SparklePro Services Inc.",
+    "locations": [
+      {
+        "branch_name": "Manhattan Head Office",
+        "address_line": "500 Lexington Ave",
+        "postal_code": "10017",
+        "city": "New York",
+        "country": "United States of America",
+        "intent": ["booking", "support"]
+      }
+    ]
+  }
+}

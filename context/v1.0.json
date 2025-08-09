@@ -1,0 +1,340 @@
+{
+    "@context": {
+        "offer": {
+            "@id": "https://www.churp.dev/docs/properties/offer",
+            "@context": {
+                "name": "https://www.churp.dev/docs/properties/offer#name",
+                "producer": "https://www.churp.dev/docs/properties/offer#producer",
+                "version": "https://www.churp.dev/docs/properties/offer#version",
+                "category": "https://www.churp.dev/docs/properties/offer#category",
+                "manufactured_in": "https://www.churp.dev/docs/properties/offer#manufactured_in",
+                "quantity": "https://www.churp.dev/docs/properties/offer#quantity",
+                "build_time": "https://www.churp.dev/docs/properties/offer#build_time",
+                "included_items": {
+                    "@id": "https://www.churp.dev/docs/properties/offer#included_items",
+                    "@container": "@set"
+                }
+            }
+        },
+        "value": {
+            "@id": "https://www.churp.dev/docs/properties/value",
+            "@context": {
+                "countries": "https://www.churp.dev/docs/properties/value#countries",
+                "base_price": "https://www.churp.dev/docs/properties/value#base_price",
+                "original_price": "https://www.churp.dev/docs/properties/value#original_price",
+                "import_duties_paid": "https://www.churp.dev/docs/properties/value#import_duties_paid",
+                "price_including_tax": "https://www.churp.dev/docs/properties/value#price_including_tax",
+                "tax_amount": "https://www.churp.dev/docs/properties/value#tax_amount"
+            }
+        },
+        "identifier": {
+            "@id": "https://www.churp.dev/docs/properties/identifier",
+            "@context": {
+                "type": "https://www.churp.dev/docs/properties/identifier#type",
+                "value": "https://www.churp.dev/docs/properties/identifier#value"
+            }
+        },
+        "transaction": {
+            "@id": "https://www.churp.dev/docs/properties/transaction",
+            "@context": {
+                "type": "https://www.churp.dev/docs/properties/transaction#type",
+                "methods": "https://www.churp.dev/docs/properties/transaction#methods"
+            }
+        },
+        "availability": {
+            "@id": "https://www.churp.dev/docs/properties/availability",
+            "@context": {
+                "countries": "https://www.churp.dev/docs/properties/availability#countries",
+                "excluded_regions": "https://www.churp.dev/docs/properties/availability#excluded_regions",
+                "excluded_postal_codes": "https://www.churp.dev/docs/properties/availability#excluded_postal_codes",
+                "stock_state": "https://www.churp.dev/docs/properties/availability#stock_state",
+                "stock_quantity": "https://www.churp.dev/docs/properties/availability#stock_quantity",
+                "languages": "https://www.churp.dev/docs/properties/availability#languages"
+            }
+        },
+        "relations": {
+            "@id": "https://www.churp.dev/docs/properties/relations",
+            "@context": {
+                "often_bought_with": {
+                    "@id": "https://www.churp.dev/docs/properties/relations#often_bought_with",
+                    "@context": {
+                        "offer_name": "https://www.churp.dev/docs/properties/relations#often_bought_with#offer_name",
+                        "offer_url": "https://www.churp.dev/docs/properties/relations#often_bought_with#offer_url",
+                        "stock_state": "https://www.churp.dev/docs/properties/relations#often_bought_with#stock_state"
+                    }
+                },
+                "requires": {
+                    "@id": "https://www.churp.dev/docs/properties/relations#requires",
+                    "@context": {
+                        "offer_name": "https://www.churp.dev/docs/properties/relations#requires#offer_name",
+                        "offer_url": "https://www.churp.dev/docs/properties/relations#requires#offer_url",
+                        "stock_state": "https://www.churp.dev/docs/properties/relations#requires#stock_state"
+                    }
+                },
+                "compatible_with": {
+                    "@id": "https://www.churp.dev/docs/properties/relations#compatible_with",
+                    "@context": {
+                        "offer_name": "https://www.churp.dev/docs/properties/relations#compatible_with#offer_name",
+                        "offer_url": "https://www.churp.dev/docs/properties/relations#compatible_with#offer_url",
+                        "stock_state": "https://www.churp.dev/docs/properties/relations#compatible_with#stock_state"
+                    }
+                },
+                "fallbacks": {
+                    "@id": "https://www.churp.dev/docs/properties/relations#fallbacks",
+                    "@context": {
+                        "offer_name": "https://www.churp.dev/docs/properties/relations#fallbacks#offer_name",
+                        "offer_url": "https://www.churp.dev/docs/properties/relations#fallbacks#offer_url",
+                        "stock_state": "https://www.churp.dev/docs/properties/relations#fallbacks#stock_state"
+                    }
+                },
+                "upsells": {
+                    "@id": "https://www.churp.dev/docs/properties/relations#upsells",
+                    "@context": {
+                        "offer_name": "https://www.churp.dev/docs/properties/relations#upsells#offer_name",
+                        "offer_url": "https://www.churp.dev/docs/properties/relations#upsells#offer_url",
+                        "stock_state": "https://www.churp.dev/docs/properties/relations#upsells#stock_state"
+                    }
+                }
+            }
+        },
+        "restrictions": {
+            "@id": "https://www.churp.dev/docs/properties/restrictions",
+            "@context": {
+                "minimum_age": "https://www.churp.dev/docs/properties/restrictions#minimum_age",
+                "regulated_category": "https://www.churp.dev/docs/properties/restrictions#regulated_category"
+            }
+        },
+        "fulfillment": {
+            "@id": "https://www.churp.dev/docs/properties/fulfillment",
+            "@context": {
+                "method": "https://www.churp.dev/docs/properties/fulfillment#method",
+                "timeframe": "https://www.churp.dev/docs/properties/fulfillment#timeframe",
+                "price": "https://www.churp.dev/docs/properties/fulfillment#price",
+                "tax_amount": "https://www.churp.dev/docs/properties/fulfillment#tax_amount",
+                "countries": "https://www.churp.dev/docs/properties/fulfillment#countries",
+                "excluded_regions": "https://www.churp.dev/docs/properties/fulfillment#excluded_regions",
+                "excluded_postal_codes": "https://www.churp.dev/docs/properties/fulfillment#excluded_postal_codes",
+                "note": "https://www.churp.dev/docs/properties/fulfillment#note",
+                "included_items_override": "https://www.churp.dev/docs/properties/fulfillment#included_items_override",
+                "carbon_footprint": "https://www.churp.dev/docs/properties/fulfillment#carbon_footprint",
+                "build_time_override": "https://www.churp.dev/docs/properties/fulfillment#build_time_override"
+            }
+        },
+        "actions": {
+            "@id": "https://www.churp.dev/docs/properties/actions",
+            "@context": {
+                "label": "https://www.churp.dev/docs/properties/actions#label",
+                "target": "https://www.churp.dev/docs/properties/actions#target",
+                "intent": "https://www.churp.dev/docs/properties/actions#intent"
+            }
+        },
+        "promotions": {
+            "@id": "https://www.churp.dev/docs/properties/promotions",
+            "@context": {
+                "benefit": "https://www.churp.dev/docs/properties/promotions#benefit",
+                "countries": "https://www.churp.dev/docs/properties/promotions#countries",
+                "minimum_age": "https://www.churp.dev/docs/properties/promotions#minimum_age",
+                "subscribed_email_required": "https://www.churp.dev/docs/properties/promotions#subscribed_email_required",
+                "user_type": "https://www.churp.dev/docs/properties/promotions#user_type",
+                "minimum_purchase_amount": "https://www.churp.dev/docs/properties/promotions#minimum_purchase_amount",
+                "note": "https://www.churp.dev/docs/properties/promotions#note",
+                "custom_rules": "https://www.churp.dev/docs/properties/promotions#custom_rules",
+                "linked_offer": "https://www.churp.dev/docs/properties/promotions#linked_offer"
+            }
+        },
+        "media": {
+            "@id": "https://www.churp.dev/docs/properties/media",
+            "@context": {
+                "benefit": "https://www.churp.dev/docs/properties/media#benefit",
+                "countries": "https://www.churp.dev/docs/properties/media#countries",
+                "minimum_age": "https://www.churp.dev/docs/properties/media#minimum_age",
+                "subscribed_email_required": "https://www.churp.dev/docs/properties/media#subscribed_email_required",
+                "user_type": "https://www.churp.dev/docs/properties/media#user_type",
+                "minimum_purchase_amount": "https://www.churp.dev/docs/properties/media#minimum_purchase_amount",
+                "note": "https://www.churp.dev/docs/properties/media#note",
+                "custom_rules": "https://www.churp.dev/docs/properties/media#custom_rules",
+                "linked_offer": "https://www.churp.dev/docs/properties/media#linked_offer"
+            }
+        },
+        "features": {
+            "@id": "https://www.churp.dev/docs/properties/features",
+            "@context": {
+                "name": "https://www.churp.dev/docs/properties/features#name",
+                "description": "https://www.churp.dev/docs/properties/features#description",
+                "value": "https://www.churp.dev/docs/properties/features#value"
+            }
+        },
+        "seller": {
+            "@id": "https://www.churp.dev/docs/properties/seller",
+            "@context": {
+                "commercial_name": "https://www.churp.dev/docs/properties/seller#commercial_name",
+                "entity_name": "https://www.churp.dev/docs/properties/seller#entity_name",
+                "locations": {
+                    "@id": "https://www.churp.dev/docs/properties/seller#locations",
+                    "@context": {
+                        "branch_name": "https://www.churp.dev/docs/properties/seller#locations#branch_name",
+                        "address_line": "https://www.churp.dev/docs/properties/seller#locations#address_line",
+                        "postal_code": "https://www.churp.dev/docs/properties/seller#locations#postal_code",
+                        "city": "https://www.churp.dev/docs/properties/seller#locations#city",
+                        "country": "https://www.churp.dev/docs/properties/seller#locations#country",
+                        "intent": "https://www.churp.dev/docs/properties/seller#locations#intent"
+                    }
+                }
+            }
+        },
+        "terms": {
+            "@id": "https://www.churp.dev/docs/properties/terms",
+            "@context": {
+                "commitment_period": "https://www.churp.dev/docs/properties/terms#commitment_period",
+                "deposit_amount": "https://www.churp.dev/docs/properties/terms#deposit_amount",
+                "renewal_frequency": "https://www.churp.dev/docs/properties/terms#renewal_frequency",
+                "policies": {
+                    "@id": "https://www.churp.dev/docs/properties/terms#policies",
+                    "@context": {
+                        "title": "https://www.churp.dev/docs/properties/terms#policies#title",
+                        "overview": "https://www.churp.dev/docs/properties/terms#policies#overview",
+                        "reference_url": "https://www.churp.dev/docs/properties/terms#policies#reference_url"
+                    }
+                },
+                "warranties": {
+                    "@id": "https://www.churp.dev/docs/properties/terms#warranties",
+                    "@context": {
+                        "overview": "https://www.churp.dev/docs/properties/terms#warranties#overview",
+                        "reference_url": "https://www.churp.dev/docs/properties/terms#warranties#reference_url"
+                    }
+                },
+                "liability_limit": "https://www.churp.dev/docs/properties/terms#liability_limit",
+                "insurance_notice": "https://www.churp.dev/docs/properties/terms#insurance_notice"
+            }
+        },
+        "contact": {
+            "@id": "https://www.churp.dev/docs/properties/contact",
+            "@context": {
+                "method": "https://www.churp.dev/docs/properties/contact#method",
+                "handle": "https://www.churp.dev/docs/properties/contact#handle",
+                "hours": "https://www.churp.dev/docs/properties/contact#hours",
+                "timezone": "https://www.churp.dev/docs/properties/contact#timezone",
+                "days": "https://www.churp.dev/docs/properties/contact#days",
+                "intent": "https://www.churp.dev/docs/properties/contact#intent"
+            }
+        },
+        "legal": {
+            "@id": "https://www.churp.dev/docs/properties/legal",
+            "@context": {
+                "title": "https://www.churp.dev/docs/properties/legal#title",
+                "summary": "https://www.churp.dev/docs/properties/legal#summary",
+                "reference_url": "https://www.churp.dev/docs/properties/legal#reference_url",
+                "jurisdictions": "https://www.churp.dev/docs/properties/legal#jurisdictions"
+            }
+        },
+        "customer_context": {
+            "@id": "https://www.churp.dev/docs/properties/customer_context",
+            "@context": {
+                "recommend_if": "https://www.churp.dev/docs/properties/customer_context#recommend_if",
+                "not_recommended_if": "https://www.churp.dev/docs/properties/customer_context#not_recommended_if",
+                "ideal_conditions": "https://www.churp.dev/docs/properties/customer_context#ideal_conditions",
+                "problem_it_solves": "https://www.churp.dev/docs/properties/customer_context#problem_it_solves",
+                "learning_curve": "https://www.churp.dev/docs/properties/customer_context#learning_curve",
+                "frequently_asked": {
+                    "@id": "https://www.churp.dev/docs/properties/customer_context#frequently_asked",
+                    "@context": {
+                        "question": "https://www.churp.dev/docs/properties/customer_context#question",
+                        "answer": "https://www.churp.dev/docs/properties/customer_context#answer"
+                    }
+                },
+                "gender": "https://www.churp.dev/docs/properties/customer_context#gender",
+                "age-range": "https://www.churp.dev/docs/properties/customer_context#age-range"
+            }
+        },
+        "lifecycle": {
+            "@id": "https://www.churp.dev/docs/properties/lifecycle",
+            "@context": {
+                "stage": "https://www.churp.dev/docs/properties/lifecycle#stage",
+                "estimated_lifespan": "https://www.churp.dev/docs/properties/lifecycle#estimated_lifespan",
+                "estimated_maintenance": "https://www.churp.dev/docs/properties/lifecycle#estimated_maintenance",
+                "estimated_ownership_cost": "https://www.churp.dev/docs/properties/lifecycle#estimated_ownership_cost",
+                "discontinued_on": "https://www.churp.dev/docs/properties/lifecycle#discontinued_on",
+                "repairability": "https://www.churp.dev/docs/properties/lifecycle#repairability",
+                "carbon_footprint": "https://www.churp.dev/docs/properties/lifecycle#carbon_footprint"
+            }
+        },
+        "ux_preference": {
+            "@id": "https://www.churp.dev/docs/properties/ux_preference",
+            "@context": {
+                "tone": "https://www.churp.dev/docs/properties/ux_preference#tone",
+                "layout": "https://www.churp.dev/docs/properties/ux_preference#layout",
+                "brand_color": "https://www.churp.dev/docs/properties/ux_preference#brand_color"
+            }
+        },
+        "documents": {
+            "@id": "https://www.churp.dev/docs/properties/documents",
+            "@context": {
+                "title": "https://www.churp.dev/docs/properties/documents#title",
+                "overview": "https://www.churp.dev/docs/properties/documents#overview",
+                "intent": "https://www.churp.dev/docs/properties/documents#intent",
+                "file_url": "https://www.churp.dev/docs/properties/documents#file_url",
+                "language": "https://www.churp.dev/docs/properties/documents#language"
+            }
+        },
+        "ratings": {
+            "@id": "https://www.churp.dev/docs/properties/ratings",
+            "@context": {
+                "label": "https://www.churp.dev/docs/properties/ratings#label",
+                "average_value": "https://www.churp.dev/docs/properties/ratings#average_value",
+                "total_count": "https://www.churp.dev/docs/properties/ratings#total_count",
+                "score_range": "https://www.churp.dev/docs/properties/ratings#score_range",
+                "best_score": "https://www.churp.dev/docs/properties/ratings#best_score",
+                "reviews": {
+                    "@id": "https://www.churp.dev/docs/properties/ratings#reviews",
+                    "@context": {
+                        "reviewer": "https://www.churp.dev/docs/properties/ratings#reviews#reviewer",
+                        "date": "https://www.churp.dev/docs/properties/ratings#reviews#date",
+                        "score": "https://www.churp.dev/docs/properties/ratings#reviews#score",
+                        "content": "https://www.churp.dev/docs/properties/ratings#reviews#content",
+                        "media": "https://www.churp.dev/docs/properties/ratings#reviews#media"
+                    }
+                },
+                "collected_by": "https://www.churp.dev/docs/properties/ratings#collected_by"
+            }
+        },
+        "recognitions": {
+            "@id": "https://www.churp.dev/docs/properties/recognitions",
+            "@context": {
+                "title": "https://www.churp.dev/docs/properties/recognitions#title",
+                "type": "https://www.churp.dev/docs/properties/recognitions#type",
+                "issuing_body": "https://www.churp.dev/docs/properties/recognitions#issuing_body",
+                "summary": "https://www.churp.dev/docs/properties/recognitions#summary",
+                "proof": "https://www.churp.dev/docs/properties/recognitions#proof"
+            }
+        },
+        "instructions": {
+            "@id": "https://www.churp.dev/docs/properties/instructions",
+            "@context": {
+                "care": "https://www.churp.dev/docs/properties/instructions#care",
+                "setup": "https://www.churp.dev/docs/properties/instructions#setup",
+                "disposal": "https://www.churp.dev/docs/properties/instructions#disposal",
+                "warnings": "https://www.churp.dev/docs/properties/instructions#warnings",
+                "usage": "https://www.churp.dev/docs/properties/instructions#usage"
+            }
+        },
+        "modifiers": {
+            "@id": "https://www.churp.dev/docs/properties/modifiers",
+            "@context": {
+                "label": "https://www.churp.dev/docs/properties/modifiers#label",
+                "explainer": "https://www.churp.dev/docs/properties/modifiers#explainer",
+                "options": {
+                    "@id": "https://www.churp.dev/docs/properties/modifiers#options",
+                    "@context": {
+                        "value": "https://www.churp.dev/docs/properties/modifiers#options#value",
+                        "countries": "https://www.churp.dev/docs/properties/modifiers#options#countries",
+                        "base_price_delta": "https://www.churp.dev/docs/properties/modifiers#options#base_price_delta",
+                        "original_price_delta": "https://www.churp.dev/docs/properties/modifiers#options#original_price_delta",
+                        "tax_amount_delta": "https://www.churp.dev/docs/properties/modifiers#options#tax_amount_delta",
+                        "quantity_delta": "https://www.churp.dev/docs/properties/modifiers#options#quantity_delta",
+                        "add": "https://www.churp.dev/docs/properties/modifiers#options#add"
+                    }
+                }
+            }
+        }
+    }
+}
